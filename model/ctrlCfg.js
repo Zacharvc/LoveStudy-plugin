@@ -2,7 +2,7 @@ import fs from "fs";
 import YAML from "yaml";
 import chokidar from "chokidar";
 
-import { pluginDirName } from "../index.js";
+import { pluginDirName } from "./base.js";
 
 class ctrlCfg {
 	constructor ( pluginDirName ) {
