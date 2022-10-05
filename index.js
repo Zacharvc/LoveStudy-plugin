@@ -1,8 +1,9 @@
 import fs from "fs";
 import ctrlCfg from "./model/ctrlCfg.js";
+import { pluginName, pluginDirName } from ".model//base.js";
 //
+let ret = [], apps = {};
 let pluginVersion = Object.keys(ctrlCfg("information", "updataLog"))[0];
-let pluginDirName = "LoveStudy-plugin", pluginName = "学习", ret = [], apps = {};
 const appFiles = fs.readdirSync(`./plugins/${pluginDirName}/apps/`).filter(file => file.endsWith(".js"));
 //
 appFiles.forEach((file) => {
