@@ -5,7 +5,7 @@ import chokidar from "chokidar";
 import { pluginDirName } from "./base.js";
 
 class ctrlCfg {
-	constructor ( pluginDirName ) {
+	constructor (pluginDirName) {
 		//默认配置文件路径
 		this.defSet = {};
 		this.defSetPath = `./plugins/${pluginDirName}/defSet`;
@@ -23,7 +23,7 @@ class ctrlCfg {
 	getConfig (app, name) {
 		return this.getYAML(app, name, "Config");
 	};
-	//获取YAML的key值
+	//获取YAML
 	getYAML (app, name, type) {
 		let targetFile = this.getFilePath(app, name, type), key = `${app}.${name}`;
 		if (this[type][key]) return this[type][key];
@@ -62,4 +62,4 @@ class ctrlCfg {
 	
 };
 
-export default new ctrlCfg( pluginDirName );
+export default new ctrlCfg(pluginDirName);
