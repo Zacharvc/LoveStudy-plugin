@@ -1,9 +1,9 @@
 import fs from "fs";
 import ctrlCfg from "./model/ctrlCfg.js";
-import { pluginName, pluginDirName } from ".model//base.js";
+import { pluginName, pluginDirName } from "./model/base.js";
 //
 let ret = [], apps = {};
-let pluginVersion = Object.keys(ctrlCfg("information", "updataLog"))[0];
+let pluginVersion = Object.keys(ctrlCfg.getYAML("information", "updataLog"))[0];
 const appFiles = fs.readdirSync(`./plugins/${pluginDirName}/apps/`).filter(file => file.endsWith(".js"));
 //
 appFiles.forEach((file) => {
