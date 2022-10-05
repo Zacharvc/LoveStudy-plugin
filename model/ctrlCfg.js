@@ -5,7 +5,7 @@ import chokidar from "chokidar";
 import { pluginDirName } from "../index.js";
 
 class ctrlCfg {
-	constructor () {
+	constructor ( pluginDirName ) {
 		//默认配置文件路径
 		this.defSet = {};
 		this.defSetPath = `./plugins/${pluginDirName}/defSet`;
@@ -54,4 +54,4 @@ class ctrlCfg {
 	
 };
 
-export default new ctrlCfg();
+export default new ctrlCfg( pluginDirName );
