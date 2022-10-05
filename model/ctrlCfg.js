@@ -35,7 +35,7 @@ class ctrlCfg {
 			return false;
 		}
 
-		this.watch(file, app, name, type);
+		this.watch(targetFile, app, name, type);
 		return this[type][key];
 	};
 	
