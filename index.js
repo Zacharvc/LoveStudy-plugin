@@ -3,7 +3,7 @@ import ctrlCfg from "./model/ctrlCfg.js";
 import { pluginName, pluginDirName } from "./model/base.js";
 //
 let ret = [], apps = {};
-let pluginVersion = Object.keys(ctrlCfg.getDefSet("information", "updateLog"))[0];
+let pluginVersion = String(Object.keys(ctrlCfg.getDefSet("information", "updateLog"))[0]);
 const appFiles = fs.readdirSync(`./plugins/${pluginDirName}/apps/`).filter(file => file.endsWith(".js"));
 //
 appFiles.forEach((file) => {
