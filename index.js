@@ -14,8 +14,8 @@ ret = await Promise.allSettled(ret);
 //
 //启动插件输出日志
 let infoLog = [
-	"----------------------------",
-	`${pluginName}(v${pluginVersion})插件开始初始化...`,
+	"---------------------",
+	`${pluginName}插件开始初始化...`,
 ];
 //打印日志
 for (let log of infoLog) logger.info(log);
@@ -30,6 +30,6 @@ for (let item in appFiles) {
 	apps[name] = ret[item].value[Object.keys(ret[item].value)[0]];
 }
 //
-logger.info(`${pluginName}插件载入成功`);
+logger.info(`${pluginName}插件${pluginVersion}载入成功，感谢使用！`);
 //
 export { pluginDirName, apps };
