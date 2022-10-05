@@ -17,7 +17,7 @@ class ctrlCfg {
 	};
 	//获取YAML的key值
 	getYAML (app, name, type) {
-		let targetFile = getFilePath(app, name, type), key = `${app}.${name}`;
+		let targetFile = this.getFilePath(app, name, type), key = `${app}.${name}`;
 		if (this[type][key]) return this[type][key];
 
 		try {
