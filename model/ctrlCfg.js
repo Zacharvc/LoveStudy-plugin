@@ -15,6 +15,14 @@ class ctrlCfg {
 		//配置文件热更新
 		this.watcher = { defSet: {}, config: {} };
 	};
+	//
+	getDefSet (app, name) {
+		return this.getYAML(app, name, "defSet");
+	};
+	//
+	getConfig (app, name) {
+		return this.getYAML(app, name, "Config");
+	};
 	//获取YAML的key值
 	getYAML (app, name, type) {
 		let targetFile = this.getFilePath(app, name, type), key = `${app}.${name}`;
@@ -33,7 +41,7 @@ class ctrlCfg {
 	
 	getFilePath (app, name, type) {
 		if (type == "defSet") return `${this.defSetPath}/${app}/${name}.yaml`;
-		else return `${this.configPath}${app}.${name}.yaml`;
+		else return `${this.configPath}/${app}.${name}.yaml`;
 	};
 
 	//监听配置文件
